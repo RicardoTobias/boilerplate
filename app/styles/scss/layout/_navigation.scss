@@ -1,0 +1,22 @@
+header {
+    .navbar {
+        .navbar-brand {
+            padding: 10px;
+        }
+        .navbar-nav {
+            .nav-item {
+                padding: 5px;
+                margin: 2px 5px 2px 5px;
+                border-radius: 5px;
+                .nav-link {
+                    color: #fff;
+                    transition: ease .5s all;
+                }
+                &.active, &:focus, &:hover {
+                    background-color: rgba(84,209,84,0.3);
+                    transition: ease .5s all;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+h1.h-custom , 
+.h1.h-custom ,
+h2.h-custom , 
+.h2.h-custom ,
+h3.h-custom , 
+.h3.h-custom ,
+h4.h-custom , 
+.h4.h-custom ,
+h5.h-custom , 
+.h5.h-custom
+h6.h-custom , 
+.h6.h-custom {
+
+    &:after{
+        content: '';
+        display: block;
+    }
+
+    /* ALIGNMENT */
+    &.h-custom-center {
+        text-align: center;
+        &:after {
+            @include line-after-heading-default-value;
+        }
+    }
+
+    &.h-custom-left {
+        text-align: left;
+        &:after {
+            @include line-after-heading-default-value;
+            left: 0px;
+        }    
+    }
+
+    &.h-custom-right {
+        text-align: right;
+        &:after {
+            @include line-after-heading-default-value;
+            right: 0px;
+        }
+    }
+
+    /* COLORED ITEMS */
+    @each $color, $value in $theme-colors {
+        &.h-custom-#{$color} {
+            @include line-after-heading-colored($value);
+        }
+    }
+    
+    @each $gray, $value in $grays {
+        &.h-custom-#{$gray} {
+            @include line-after-heading-colored($value);
+        }
+    }
+    
+    @each $colored, $value in $colors {
+        &.h-custom-#{$colored} {
+            @include line-after-heading-colored($value);
+        }
+    }
+    
+}
+
+h2.h-custom {
+
+    @include typografy(uppercase,normal,25px,relative);
+
+    margin: 0 0 40px 0;
+
+    &:after {
+        @include line-after-heading-width(50px,2px);
+    }
+    &.h-custom-center {
+        &:after {
+            @include line-after-heading-center(-25px);
+        }
+    }
+}
+
+h5.h-custom {
+    @include typografy(none,normal,21px,static);
+    &:after {
+        @include line-after-heading-width(50px,2px);
+    }
+    &.h-custom-center {
+        &:after {
+            @include line-after-heading-center(-25px);
+        }
+    }
+}
